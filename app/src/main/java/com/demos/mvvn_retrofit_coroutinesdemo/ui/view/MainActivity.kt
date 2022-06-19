@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getDadJoke(){
         model.onCreate()
-        model.jokesModel.observe(this, Observer {
-          binding.txtViewJoke.text = it.joke
-       })
+        model.jokesModel.observe(this) { currentJoke ->
+            binding.txtViewJoke.text = currentJoke.joke
+        }
     }
 
 
