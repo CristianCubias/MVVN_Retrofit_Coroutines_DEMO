@@ -19,13 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         binding.btnGetJoke.setOnClickListener {
             getDadJoke()
         }
     }
-
     private fun getDadJoke(){
         model.onCreate()
         model.jokesModel.observe(this, Observer {

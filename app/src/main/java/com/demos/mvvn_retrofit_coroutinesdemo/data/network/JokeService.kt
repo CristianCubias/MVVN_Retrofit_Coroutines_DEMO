@@ -11,7 +11,7 @@ class JokeService {
     suspend fun getJoke():JokesModel {
         return withContext(Dispatchers.IO){
             val response = retrofit.create(JokesApiClient::class.java).getJoke()
-            response.body() ?: JokesModel("", "", 0)
+            response.body() ?: JokesModel("1", "Sorry, No Jokes for now :c", 0)
         }
     }
 }
